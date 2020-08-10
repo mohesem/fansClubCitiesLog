@@ -10,6 +10,7 @@ mongoose.connect("mongodb://localhost:27017/fansclub", {
 });
 
 mongoose.connection.on("connected", async () => {
+  let logs = "";
   try {
     const count = await Team.countDocuments({}).exec();
     console.log(count);
@@ -33,6 +34,9 @@ mongoose.connection.on("connected", async () => {
         nu = nu + 1;
         loop();
       } else {
+        fs.writeFile("./logs.txt", logs, (err) => {
+          console.log(err);
+        });
         console.log("completed");
       }
     })();
