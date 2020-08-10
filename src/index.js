@@ -27,7 +27,9 @@ mongoose.connection.on("connected", async () => {
           name: team[0].city,
         }).exec();
 
-        console.log(city);
+        if (!city) {
+          logs += `${team[0]} \n`;
+        }
         nu = nu + 1;
         loop();
       } else {
