@@ -28,6 +28,7 @@ mongoose.connection.on("connected", async () => {
         }).exec();
 
         console.log(city);
+        nu = nu + 1;
         loop();
       } else {
         console.log("completed");
