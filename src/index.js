@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import Team from "./models/teamsModel";
 import City from "./models/cityModel";
-// import fs from "fs";
+import fs from "fs";
 
 mongoose.connect("mongodb://localhost:27017/fansclub", {
   useUnifiedTopology: true,
